@@ -1,0 +1,10 @@
+<div class="categories">
+  <div *ngFor="let item of menu" class="tabs" [routerLink]="item.routePath" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+    <div class="tabs__content">
+      <img src="{{item.svgPath}}" alt="{{item.name}}">
+      <p>{{item.name}}</p>
+      <p class="tabs__content__games">{{item.gamesCount}}</p>
+    </div>
+    <hr>
+  </div>
+</div>

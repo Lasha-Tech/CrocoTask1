@@ -1,0 +1,14 @@
+<div class="wrapper">
+  <!--  Croco Logo-->
+  <img src="crocoLogo.jpg" alt="crocoLogo" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" id="logo">
+
+  <div class="menu">
+    <div *ngFor="let item of menu" class="menu__item" [routerLink]="item.routePath" routerLinkActive="active">
+      <div class="menu__item__content">
+        <img src="{{item.svgPath}}" alt="{{item.name}}">
+        <p>{{item.name}}</p>
+      </div>
+      <hr>
+    </div>
+  </div>
+

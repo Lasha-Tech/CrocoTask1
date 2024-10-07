@@ -1,0 +1,100 @@
+@mixin hrStyle($opacityhr: 0) {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 5px;
+  background-color: #189541;
+  border-color: #189541;
+  border-radius: 5px;
+  opacity: $opacityhr;
+}
+
+.categories {
+  width: 100%;
+  background-color: #1D242C;
+  padding: 20px 0 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-transform: capitalize;
+  gap: 30px;
+
+  .tabs {
+    width: fit-content;
+    position: relative;
+    color: #8B949E;
+    cursor: pointer;
+
+    &:hover {
+      color: #ffffff;
+
+      hr {
+        @include hrStyle(1);
+      }
+
+      .tabs__content img {
+        filter: brightness(0) saturate(100%) invert(54%) sepia(85%) saturate(7202%) hue-rotate(135deg) brightness(100%) contrast(81%);
+      }
+
+      .tabs__content__games {
+        color: #189541;
+      }
+    }
+
+    &__content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      padding: 0 5px;
+
+      & img {
+        width: 15px;
+        height: 18px;
+        filter: brightness(0) saturate(100%) invert(100%) sepia(85%) saturate(431%) hue-rotate(176deg) brightness(80%) contrast(85%);
+      }
+
+      &__games {
+        font-size: 12px;
+        font-weight: bold;
+        color: #8B949E;
+        position: absolute;
+        right: -10px;
+        top: -10px;
+      }
+    }
+  }
+
+  hr {
+    @include hrStyle;
+  }
+}
+
+
+.active {
+  position: relative;
+
+  hr {
+    @include hrStyle(1);
+  }
+
+  p {
+    color: #ffffff;
+  }
+
+  .tabs__content img {
+    filter: brightness(0) saturate(100%) invert(54%) sepia(85%) saturate(7202%) hue-rotate(135deg) brightness(100%) contrast(81%);
+  }
+
+  .tabs__content__games {
+    color: #189541;
+  }
+}
+
+
+
+
+
+

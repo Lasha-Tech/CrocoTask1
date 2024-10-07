@@ -1,0 +1,21 @@
+.header {
+  width: 100%;
+  height: 60px;
+  background-color: #252B33;
+}
+
+.main {
+  width: 100%;
+  padding: 8px 0 0 8px;
+
+  img {
+    width: 100%;
+    height: 420px;
+    margin-bottom: 8px;
+  }
+
+  &__tabs {
+    width: 100%;
+  }
+}
+

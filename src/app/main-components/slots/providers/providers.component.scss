@@ -1,0 +1,110 @@
+@mixin hrStyle($opacityhr: 0) {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 5px;
+  background-color: #189541;
+  border-color: #189541;
+  border-radius: 5px;
+  opacity: $opacityhr;
+}
+
+@mixin tabStyle($marginTop: 0) {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8B949E;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: $marginTop;
+
+  p {
+    margin-bottom: 20px;
+    padding: 0 5px;
+  }
+
+  hr {
+    @include hrStyle(0);
+  }
+
+  &:hover {
+    color: #fff;
+
+    hr {
+      @include hrStyle(1);
+    }
+  }
+}
+
+@mixin tabLineStyle($columnGap: 0) {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  column-gap: $columnGap;
+}
+
+.tabs-container {
+  width: 100%;
+  margin: 0 auto;
+  background-color: #272D36;
+  padding: 20px 20px 0 20px;
+
+  .tab-line {
+    @include tabLineStyle;
+
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      flex-grow: 1;
+      gap: 26px;
+
+      .tab {
+        @include tabStyle;
+      }
+    }
+  }
+
+  .extra-tab-lines {
+    .tab-line {
+      @include tabLineStyle(26px);
+
+      .tab {
+        @include tabStyle(15px);
+      }
+    }
+  }
+}
+
+.see-more {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  padding-bottom: 20px;
+  gap: 10px;
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: 500;
+
+  svg {
+    fill: #189541;
+    transition: all ease-in-out 0.4s;
+    transform: rotate(0deg);
+  }
+}
+
+.active {
+  color: #fff !important;
+
+  hr {
+    @include hrStyle(1);
+    opacity: 1 !important;
+  }
+}
+
+.show-all svg {
+  transition: all ease-in-out 0.4s;
+  transform: rotate(180deg);
+}

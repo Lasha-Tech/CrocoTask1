@@ -1,0 +1,21 @@
+<div class="slots">
+  <div class="slots__item" *ngFor="let slot of slots">
+    <div class="slots__item__img">
+      <img src="{{slot.image}}" alt="">
+      <div *ngIf="slot.tags.indexOf('new') !== -1" class="new-badge">
+        <p>New</p>
+      </div>
+
+      <div class="hover-container">
+        <p *ngIf="category">{{slot.providerName}}</p>
+        <p *ngIf="!category">{{slot.provider}}</p>
+        <div class="play-button">
+          Play
+        </div>
+      </div>
+    </div>
+    <div class="slots__item__name">
+      {{slot.name}}
+    </div>
+  </div>
+</div>
